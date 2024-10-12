@@ -104,3 +104,7 @@ button:hover {
     font-size: 14px;
     margin-left: 10px;
 }
+
+.btn-mover-haciendo { background-color: #3498db; color: white; }
+.btn-mover-pendiente { background-color: #e74c3c; color: white; }
+.btn-mover-completada { background-color: #2ecc71; color: white; }
