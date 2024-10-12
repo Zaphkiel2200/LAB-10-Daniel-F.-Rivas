@@ -49,3 +49,33 @@ h1 {
     outline: none;
     box-shadow: 0 2px 15px rgba(52, 152, 219, 0.3);
 }
+
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.btn-agregar {
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    color: white;
+}
+.columnas {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.columna {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
