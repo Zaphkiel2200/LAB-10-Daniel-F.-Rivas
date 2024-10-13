@@ -38,3 +38,24 @@ function actualizarUI() {
     for (const estado in columnas) {
         columnas[estado].innerHTML = `<h2>${estado.charAt(0).toUpperCase() + estado.slice(1)}</h2>`;
     }
+
+    tareas.forEach((tarea, index) => {
+        const tareaElement = document.createElement('div');
+        tareaElement.className = 'tarea';
+        tareaElement.innerHTML = `<span>${tarea.nombre}</span><div>`;
+
+        if (tarea.estado === 'pendiente') {
+            tareaElement.innerHTML += `
+                <button onclick="moverTarea(${index}, 'haciendo')" class="btn-mover-haciendo">Mover a Haciendo</button>
+            `;
+        } else if (tarea.estado === 'haciendo') {
+            tareaElement.innerHTML += `
+                <button onclick="moverTarea(${index}, 'pendiente')" class="btn-mover-pendiente">Mover a Pendiente</button>
+                <button onclick="moverTarea(${index}, 'completada')" class="btn-mover-completada">Mover a Completada</button>
+            `;
+        }
+
+        tareaElement.innerHTML += '</div>';
+        columnas[tarea.estado].appendChild(tareaElement);
+    });
+}
