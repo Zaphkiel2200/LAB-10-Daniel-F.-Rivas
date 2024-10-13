@@ -17,3 +17,13 @@ function agregarTarea() {
         actualizarUI();
     }
 }
+
+function moverTarea(index, nuevoEstado) {
+    if (
+        (tareas[index].estado === 'pendiente' && nuevoEstado === 'haciendo') ||
+        (tareas[index].estado === 'haciendo' && (nuevoEstado === 'pendiente' || nuevoEstado === 'completada'))
+    ) {
+        tareas[index].estado = nuevoEstado;
+        actualizarUI();
+    }
+}
