@@ -27,3 +27,14 @@ function moverTarea(index, nuevoEstado) {
         actualizarUI();
     }
 }
+
+function actualizarUI() {
+    const columnas = {
+        pendiente: document.getElementById('pendiente'),
+        haciendo: document.getElementById('haciendo'),
+        completada: document.getElementById('completada')
+    };
+
+    for (const estado in columnas) {
+        columnas[estado].innerHTML = `<h2>${estado.charAt(0).toUpperCase() + estado.slice(1)}</h2>`;
+    }
